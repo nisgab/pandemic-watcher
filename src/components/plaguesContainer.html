@@ -1,0 +1,3 @@
+<div class="floatin" data-bind="foreach:getPlagues(items)">
+    <ko-plague-list params="items:$data, index:$parent.amountOfPlagues - $index(), activePlague:$parent.activePlague()"></ko-plague-list>
+</div>

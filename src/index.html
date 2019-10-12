@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="sash.css">
+    <link rel="stylesheet" href="main.css">
+
+    <title>Pandemic watcher</title>
+</head>
+
+<body dir="rtl">
+    <div class="pend">
+        <ko-plague-container params="items: infectionCards, activePlague: currentPlague">
+        </ko-plague-container>
+
+        <div data-bind="foreach:plagues">
+            <span data-bind="text:$data.readableName"></span>
+            <select data-bind="options:$parent.getCitiesByColor($data), optionsText: 'name', value: $parent.selectedCity()[$data.name], optionsCaption: 'Choose...'" />
+            <input type="button" data-bind="click:$parent.addCity($data)" value="בחר"></button>
+        </div>
+        <div>
+            <input type="button" data-bind="click:increasePlagueCounter" value="מגפה!" />
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

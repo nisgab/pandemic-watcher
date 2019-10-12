@@ -1,0 +1,13 @@
+<form class="floatin col-IV">
+    <table>
+        <thead data-bind="css: {activePlague : activePlague() === listIndex}">
+            <tr>
+                <th>שם</th>
+        </thead>
+        <tbody data-bind="foreach: items">
+            <tr>
+                <td data-bind="text: name, css: $parent.getColor($data)"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
